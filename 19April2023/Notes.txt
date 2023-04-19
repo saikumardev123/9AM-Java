@@ -1,0 +1,137 @@
+
+Datatype: 
+
+A datatype is a keyword which specifies the type of data that can be identified/ 
+reffered in a variable.
+
+Java Provides 2 types of DT, 
+
+Primitive types:
+
+byte (1 byte = 8 bits, 2power7 - 1), short(2 bytes - 2pow15 - 1), int(4 bytes), long(8 bytes), float(4 bytes), double(8 bytes), boolean(1 bit), char(2 bytes)
+
+Non Primitive Types: Class / Interface can be considered as Non Primitive Data Type.
+
+
+
+public class PrimitiveTypesDemo {
+	
+	public static void main(String[] args) {
+		
+		/* Primitive Types */
+		
+		  byte b = 127;
+		  short s = 350;
+		  int i = 878553;
+		  long l = 9010101010l;
+		  float f= 4.5f;
+		  double d =76699985567889.3d;
+		  char c='x';
+		  boolean bool = false;
+		 
+		  System.out.println(b);
+		  System.out.println(s);
+		  System.out.println(i);
+		  System.out.println(l);
+		  System.out.println(f);
+		  System.out.println(d);
+		  System.out.println(c);
+		  System.out.println(bool);
+		  System.out.println(Byte.MAX_VALUE);
+		  System.out.println(Integer.MAX_VALUE);
+		  System.out.println(Long.MAX_VALUE);
+		  /* Non Primitive Types */ 
+		   String s1 =new String("hello world");
+		   System.out.println(s1);
+		
+	}
+
+}
+
+
+Variables:
+
+A variable is an identifier which is used refer / identify some data. 
+
+syntax: 
+
+  datatype variable_name  = value;
+
+
+  examples:
+
+          byte b = 127;
+		  short s = 350;
+		  int i = 878553;
+		  long l = 9010101010l;
+		  float f= 4.5f;
+		  double d =76699985567889.3d;
+		  char c='x';
+		  boolean bool = false;
+
+Types of Variables in Java: 
+
+1. local variables : 
+
+If we create any variable inside a method, it can be considered as local variable.
+
+
+public class LocalVariablesDemo {
+	static void m1() {
+		int a=100;  // local variable
+		System.out.println(a);
+	}
+	public static void main(String[] args) {
+		int a=900; // local variable
+		 m1(); 
+		 System.out.println(a); // 900
+	}	
+}
+
+The local variables will be visible only inside the method and cannot be accessible / visible outside of 
+the method. 
+
+2. static variables:  
+
+ Any variable that is associated to a class is known as static variables.
+ static variables can also be called as class variables. 
+
+syntax: 
+
+static datatype var_name = value;
+
+Static variables gets created outside of the methods and can be accessible in any method of that class. 
+
+For static variables, only one copy of data is maintained which means any update to static variable modifies 
+the actual data in the memory. 
+
+
+
+public class StaticVariablesDemo {
+	
+	static int counter = 0; // 1
+	
+	 public static void main(String[] args) {
+		 
+	 System.out.println(StaticVariablesDemo.counter); // 0
+	 
+	  StaticVariablesDemo.counter++; // 1
+	  
+	  System.out.println(StaticVariablesDemo.counter); // 1
+	  
+	  m1();
+
+	  System.out.println(StaticVariablesDemo.counter); // 2		  
+	}
+	 static void m1() {
+		 System.out.println(StaticVariablesDemo.counter); // 1
+		 StaticVariablesDemo.counter++; // 2
+	 }
+}
+
+3. non static variables 
+
+
+
+
+
