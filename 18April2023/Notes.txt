@@ -1,0 +1,46 @@
+Building blocks of Java:
+
+JDK, JRE, JVM:
+
+
+JDK: Java Development Kit provides different libraries (jar files) for application
+Development. 
+
+JDK also provides few internal tools such as java, javac, javap etc used for 
+application development. 
+
+JRE:  Java Runtime Environment provides an environment to run java applications. 
+
+JRE also contains the required jar files. 
+
+JVM: Java Virtual Machine is a part of JRE and will be invoked using java command. 
+
+ex:   java Hello  
+
+JVM gets invoked when a file is being executed. 
+
+Java is an Object Oriented Programming Language which means all the implementation 
+goes through classes.
+
+
+class FirstApp123{
+public static void main(String args[]){
+     System.out.println("Hello");
+ }
+}
+
+javac FirstApp123.java 
+
+java FirstApp123 
+
+
+IDE: Integrated Development Environment 
+
+We have many IDEs such as Eclipse, JetBrains, IntelliJ, NetBeans...
+
+We can use Eclipse.
+
+
+
+
+
