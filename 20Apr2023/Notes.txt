@@ -1,0 +1,149 @@
+Non Static Variables :
+Non Static Variables can also be called as instance variables because these 
+variables are bound to instances( objects).
+
+
+public class NonStaticVariablesDemo {
+	
+	int a=100;
+	String name="DigitalLync";
+	
+	public static void main(String[] args) {
+		  NonStaticVariablesDemo ns = new NonStaticVariablesDemo();
+		System.out.println(ns.a);
+		System.out.println(ns.name);
+		ns.m1();
+	}
+	
+	void m1() {
+		System.out.println(a);
+		System.out.println(name);
+	}
+
+}
+
+Whenever an object is created, then a copy of instance variable is provided 
+to the object.
+
+
+Problem Statement: 
+
+Canara Bank wants to provide online application to customers for the following 
+operations such as creating an account, deposit.
+
+objects:  Customer -> name,accountNumber,address,accountBalance.
+
+
+class Bank{
+	static String bankName ="ICICI Lombard";
+	static String ifscCode="ICICI1234543";
+}
+class Customer extends Bank{
+	String name;
+	String address;
+	long accountNumber;
+	long accountBalance;
+	
+	void deposit(long amount) {
+		 this.accountBalance = this.accountBalance + amount;
+	}
+	
+}
+
+public class NonStaticRealtime {
+
+	public static void main(String[] args) {
+		
+		Customer customer1 = new Customer(); // name,address,accountNum, accBal
+		customer1.name="kiran";
+		customer1.address="hyderabad";
+		customer1.accountNumber=10001010229L;
+		customer1.accountBalance= 1000L;
+		
+		Customer customer2 = new Customer(); // name,address,accountNum, accBal
+		customer2.name="Rajesh";
+		customer2.address="banglore";
+		customer2.accountNumber=112001010229L;
+		customer2.accountBalance= 660L;
+		customer2.name="Anil";
+		
+		System.out.println(customer1.name);
+		System.out.println(customer2.name);
+		System.out.println(customer2.accountBalance);
+		customer2.deposit(10000);
+		System.out.println(customer2.accountBalance);
+		customer1.deposit(9000);
+		System.out.println(customer1.accountBalance);
+		
+		System.out.println(customer1.bankName);
+		System.out.println(customer2.bankName);
+		
+	}
+	
+}
+
+Static Context  VS Non Static Context 
+
+
+Static Context: 
+
+static variables, static methods come under static context. 
+
+Any static variable can be accessed directly / class name in a static method. 
+
+A static method can access another static method directly.
+
+Static Context is bound to classes.
+
+
+Non Static Context: 
+
+instance variables / non static variables, non static methods / instance methods 
+come under non static context.
+
+A non static variable can be accessed directly in a non static method. 
+
+A non static method can access another non static method directly. 
+
+Non Static Context is bound to instance / object.
+
+
+Key Points: 
+
+1. A static method cannot call non static variable / non static method direcly.
+
+2. If  a static method wants to call a non static method / non static variable. it 
+can call it only by using object. 
+
+3. If a non static method wants to access the static content, it can 
+access it directly. 
+
+
+public class NonStaticVariablesDemo {
+	
+	int a=100;
+	String name="DigitalLync";
+	static int b=900;
+	
+	public static void main(String[] args) {
+		  NonStaticVariablesDemo ns = new NonStaticVariablesDemo();
+		System.out.println(ns.a);
+		System.out.println(ns.name);
+		ns.m1();
+	}
+	
+	void m1() {
+		System.out.println(a);
+		System.out.println(name);
+		System.out.println(b);
+		m2();
+	}
+	static void m2() {
+		
+	}
+
+}
+
+
+
+
