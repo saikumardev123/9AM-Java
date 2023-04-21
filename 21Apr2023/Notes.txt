@@ -1,0 +1,235 @@
+Control Statements: 
+
+There are 3 types of control Statements.
+
+1. sequential :  The execution flow will always be in sequence
+
+ if, if-else, switch
+
+2. iterative : The execution flow differs based on the test condition evaluated. 
+
+while, do-while and for
+
+3. jump :  continue, break and return
+
+
+ if, if-else, switch:
+
+if:
+ syntax: 
+
+   if(test-condition){
+       // code
+   }
+
+
+
+public class SequentialStatementsDemo {
+
+	public static void main(String[] args) {
+		
+		int age =19; 
+		
+		if(age >= 18) {
+			System.out.println("Eligible");
+		}
+		
+	}
+	
+}
+
+if-else:
+ if(test-condition){
+// code
+ }
+ else{
+     // code
+ }
+
+
+public class SequentialStatementsDemo {
+
+	public static void main(String[] args) {
+		
+		int age =17; 
+		
+		if(age >= 18) {
+			System.out.println("Eligible");
+		}
+		else {
+			System.out.println("Not Eligible");
+		}
+		
+	}
+	
+}
+
+
+
+public class SequentialStatementsDemo {
+
+	public static void main(String[] args) {
+		
+		int age =19; 
+		
+		if(age >= 18) {
+			System.out.println("Eligible to Vote");
+		}
+		int ageOfStudent = 16;
+		if(ageOfStudent >= 16) {
+			System.out.println("Eligble to Apply");
+		}
+	}
+	
+}
+
+
+switch:
+
+syntax: 
+         switch(choice){
+            case case_value1:  // code 
+            case case_value2:  // code 
+            case case_value3:  // code 
+            case case_value4:  // code
+            .
+            .
+            .
+
+            case case_valuen: //code 
+            default: //code 
+         }
+
+
+
+public class SequentialStatementsDemo {
+
+	public static void main(String[] args) {
+		// If-else
+	/*	int age =19; 
+		
+		if(age >= 18) {
+			System.out.println("Eligible to Vote");
+		}
+		int ageOfStudent = 16;
+		if(ageOfStudent >= 16) {
+			System.out.println("Eligble to Apply");
+		}
+		*/
+		
+		// Switch 
+		
+		 String course ="angular"; 
+		  switch(course) {
+		  case "java": System.out.println("90 hours"); break;
+		  case "react": System.out.println("30 hours"); break;
+		  case "angular": System.out.println("20 hours"); break;
+		  default: System.out.println("this course is n/a");
+		  }
+	}
+	
+}
+
+
+Problem Statement: 
+
+Create 4 categories of products, based on the selection of a category, display the 
+selected category in the output.
+
+electronics, mobiles, cameras, grocery 
+
+
+public class SequentialStatementsDemo {
+
+	public static void main(String[] args) {
+		// If-else
+	/*	int age =19; 
+		
+		if(age >= 18) {
+			System.out.println("Eligible to Vote");
+		}
+		int ageOfStudent = 16;
+		if(ageOfStudent >= 16) {
+			System.out.println("Eligble to Apply");
+		}
+		*/
+		
+		// Switch 
+		
+		/* String course ="angular"; 
+		  switch(course) {
+		  case "java": System.out.println("90 hours"); break;
+		  case "react": System.out.println("30 hours"); break;
+		  case "angular": System.out.println("20 hours"); break;
+		  default: System.out.println("this course is n/a");
+		  }  */
+		  
+		  // 
+		  
+		// Switch 
+			
+			 String course ="grocery"; 
+			  switch(course) {
+			  case "electronics": System.out.println("You have selected electronics"); break;
+			  case "mobiles": System.out.println("You have selected mobiles"); break;
+			  case "cameras": System.out.println("You have selected cameras"); break;
+			  case "grocery": System.out.println("You have selected Grocery"); break;
+			  default: System.out.println("this is n/a");
+			  }
+	}
+	
+}
+
+Iterative Statements :
+while:
+syntax:  
+while(test-condition){
+ // code
+}
+
+
+public class IterativeStatementsDemo {
+
+	public static void main(String[] args) {
+		
+		 int i=1;
+		 while(i <=10) {
+			  System.out.println(i);
+			  i++;
+		 }
+		
+	}
+	
+	
+}
+
+
+public class IterativeStatementsDemo {
+
+	public static void main(String[] args) {
+		
+//		 int i=1;
+//		 while(i <=10) {
+//			  System.out.println(i);
+//			  i++;
+//		 }
+		
+		
+		String[] users = {"user1","user2","user3","user4","user5"};
+		int i=0;
+		   while(i < users.length) {
+			   System.out.println(users[i]);
+			   i++;
+		   }
+		
+	}
+	
+	
+}
+
+Problem Statement:
+
+Take an array of numbers and print only the even numbers on the console. 
+
+int i[]= {1,3,4,6,6,6,3,4657,3,5,7,356,8,8,8,5,7,8,9};
+

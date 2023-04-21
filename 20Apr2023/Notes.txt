@@ -80,10 +80,7 @@ public class NonStaticRealtime {
 		
 	}
 	
-}
-
 Static Context  VS Non Static Context 
-
 
 Static Context: 
 
