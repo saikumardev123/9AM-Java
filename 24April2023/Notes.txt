@@ -1,0 +1,219 @@
+do-while:
+
+syntax: 
+
+do{
+
+// code
+
+}while(test-condition)
+
+if we want to execute the first iteration without checking the test
+condition, then we can use do-while.
+
+
+public class IterativeStatementsDemo {
+
+	public static void main(String[] args) {
+		
+//		 int i=1;
+//		 while(i <=10) {
+//			  System.out.println(i);
+//			  i++;
+//		 }
+		
+		
+//		String[] users = {"user1","user2","user3","user4","user5"};
+//		int i=0;
+//		   while(i < users.length) {
+//			   System.out.println(users[i]);
+//			   i++;
+//		   }
+		
+		
+//		  do-while
+		
+		int i=21;
+		   do {
+			    System.out.println(i); // 21
+			    i++;
+		   }while(i<= 10);
+	}
+	
+	
+}
+
+for-loop: 
+
+syntax: 
+
+for(initialization; test-condition; inc/dec){
+// code
+}
+
+
+//For Loop 
+		
+		for(int i=1; i<=10;i++) {
+			System.out.println(i);
+		}
+
+Problem Statement: 
+
+Iterate the following array using for loop.
+String[] users = {"user1","user2","user3","user4","user5"};
+
+
+//For Loop 
+		
+		String[] users = {"user1","user2","user3","user4","user5"};
+		
+		for(int i=0; i<users.length;i++) {
+			System.out.println(users[i]);
+		}
+
+Jump Statements: 
+
+break, continue, return 
+
+break: to terminate a block 
+
+continue: to skip a specific iteration,we can use continue.
+
+
+		String[] users = {"user1","user2","user3","user4","user5","user6","user7"};
+		
+		for(int i=0; i<users.length;i++) {
+		
+			if(users[i].contentEquals("user3") || users[i].contentEquals("user4")) {
+				   continue;    
+			}
+			System.out.println(users[i]);
+		}
+		
+
+
+PSTMT: use continue in the previous problem statement of even and odd numbers. 
+
+int i[]= {1,3,4,6,6,6,3,4657,3,5,7,356,8,8,8,5,7,8,9};
+        for(int j=0; j<i.length; j++){
+            if(i[j] % 2 == 1) {
+                continue;
+            }
+            System.out.println(i[j]);
+        }
+
+
+return: 
+
+return is used to return a value from the function. 
+
+	  static String getUserData(){
+		   
+		       return "Kiran, Hyderabad, 500087";
+	   }
+
+
+Object Oriented Programming:
+
+If we can provide a solution to a realtime problem by connecting 
+the realtime objects, then it is known as object oriented 
+programming. 
+
+If any programming language is object oriented, then it gets the 
+following features. 
+
+ 1. Classes 
+ 2. Objects 
+ 3. Inheritance 
+ 4. Polymorphism 
+ 5. Abstraction 
+ 6. Encapsulation 
+
+Classes: 
+
+A class is a desigm / blue print / template of a realtime object. 
+
+syntax: 
+
+class classname{
+  // variables 
+  //methods
+}
+
+To create an object, syntax: 
+
+Classname objectName = new Classname(); 
+
+
+Problem Statement: 
+
+Create a simple template (class) that represents a general product from which we should be able to 
+create multiple products (object).
+
+import java.util.Date;
+
+class Product{
+
+	String name; 
+	String brand;
+	long price;
+	Date manufactureDate;
+	Date expiryDate;
+	public Product(String name, String brand, long price, Date manufactureDate, Date expiryDate) {
+		this.name = name;
+		this.brand = brand;
+		this.price = price;
+		this.manufactureDate = manufactureDate;
+		this.expiryDate = expiryDate;
+	}
+	
+}
+public class Test {
+
+	public static void main(String[] args) {
+		
+		 Product product = new Product("Product 1","good brand",900L,new Date(), new Date());
+		 
+		 System.out.println(product.name);
+		 System.out.println(product.manufactureDate);
+		 System.out.println(product.expiryDate);
+		 System.out.println(product.price);
+		
+	}
+	
+}
+
+
+Problem Statement: 
+
+Create  3 user objects with fields username, password, email. 
+
+
+class User {
+
+   String username;
+   String password;
+   String email;
+
+   User(String username, String password, String email){
+       this.username = username;
+       this.password = password;
+       this.email = email;
+   }
+
+}
+
+
+class X{
+
+    main(){
+        User user = new User("x,"y","z@gmail.com");
+    }
+}
+
+
+
+
+
+	
