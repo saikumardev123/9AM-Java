@@ -1,0 +1,203 @@
+Inheritance:
+
+Inheritance is the process where a class extends another class to reuse 
+the existing code. 
+
+class A{
+
+}
+class B extends A{
+
+}
+
+extends keyword is used to extend /inherit a class. 
+
+
+class Calc{
+	
+	  void add(int a, int b) {
+		  System.out.println(a+b);
+	  }
+	  void sub(int x, int y) {
+		  System.out.println(x-y);
+	  }
+}
+class SciCalc extends Calc{
+	
+	 void square(int x) {
+		        System.out.println(x*x); 
+	 }
+	 
+	 void cube(int y) {
+		   System.out.println( y * y *  y);
+	 }
+	
+}
+
+public class InheritanceDemo {
+
+	public static void main(String[] args) {
+		SciCalc sc= new SciCalc();
+		sc.add(10,20);
+		sc.cube(20);
+	}
+}
+
+
+From the above, SciCalc is the child class (sub class) and Calc is parent class (super class). 
+
+A super class cannot have the access to the sub class resources however, the sub class can access the 
+super class resources and also its own resources. 
+
+Types of Inheritance:
+
+There are 2 types of Inheritance:
+
+Single: 
+
+class A{
+
+}
+class B extends A{
+
+}
+
+Multiple:
+
+If a class extends more than one super class, then we can call it as multile inheritance.
+
+Java does not support multi inheritance.
+
+class A{
+      int a=0;
+}
+class B{
+       int a=100;
+}
+
+class C extends A,B{
+    C cc= new C();
+    System.out.println(cc.a); //?
+}
+
+
+Under Single Inheritance, we have multi level, hierarchical 
+
+hierarchical: It is quite opposite of multiple inheritance.
+
+class  A{
+
+}
+class B extends A{
+
+}
+class C extends A{
+
+}
+class D extends A{
+
+}
+
+
+Multi-level: 
+
+class A{
+
+}
+class B extends A{
+
+}
+class C extends B{
+
+}
+
+Problem Statement: 
+
+Create a class called AuthenticationSystem (register, login)
+
+Create a class called Customer, Admin.
+
+Customer should inherit AuthenticationSystem.
+
+Admin sould inherit AuthenticationSystem.
+
+
+
+class AuthenticationSystem{
+	
+	public void login(String username, String password) {
+		  
+		if(username.contentEquals("sai") && password.contentEquals("sai")) {
+			System.out.println("Login success");
+		}
+		else {
+			System.out.println("Login Failure");
+		}
+	}
+	
+}
+class Customer extends AuthenticationSystem{
+	
+}
+class Admin extends AuthenticationSystem{
+	
+}
+
+public class UserManagement {
+
+	public static void main(String[] args) {
+		Customer c1= new Customer();
+
+		 c1.login("sai", "sai");
+		 
+		 Admin a1=new Admin();
+		 a1.login("kiran", "sai");
+	}
+}
+
+Constructor:
+
+A Constructor in java constructs an object. 
+
+Rules:
+
+1.The Constructor name must be same as class name. 
+2. Constructors should not have any return type. 
+3. We should not write critical logic in Constructor.
+4. We can dynamically assign the values to the object using Constructor. 
+
+Imp Note: If we don't have a constructor in the class, then Java Compiler provides a constructor - default 
+constructor. 
+
+We can also perform constructor overloading.
+
+
+class User{
+	
+	private String username;
+	private String address;
+	private String accNo;
+	public User(String username, String address, String accNo) {
+		this.username = username;
+		this.address = address;
+		this.accNo = accNo;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.username + "\t"+ this.address + "\t"+ this.accNo;
+	}
+}
+public class ConstructorTest {
+	
+	public static void main(String[] args) {
+		User user = new User("kiran","hyderabad", "SBI67897Y888");
+		
+		System.out.println(user);
+;	}
+
+}
+
+
+

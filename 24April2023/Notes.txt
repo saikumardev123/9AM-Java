@@ -205,13 +205,6 @@ class User {
 }
 
 
-class X{
-
-    main(){
-        User user = new User("x,"y","z@gmail.com");
-    }
-}
-
 
 
 
