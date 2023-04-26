@@ -1,0 +1,143 @@
+Constructor Overloading: 
+
+It is the process of creating more than one constructor in the class to 
+create different objects of same class. 
+
+rules:
+
+1. There should be a difference in number of parameters or 
+type of parameters. 
+
+
+
+class Login{
+	
+	String username;
+	String password;
+	long mobileNumber;
+	public Login(String username, String password) {
+		
+		System.out.println("Username: "+ username);
+		System.out.println("Password: "+ password);
+		this.username = username;
+		this.password = password;
+		
+	}
+	public Login(long mobileNumber, String password) {
+		
+		System.out.println("mobileNumber: "+ mobileNumber);
+		System.out.println("Password: "+ password);
+		this.mobileNumber = mobileNumber;
+		this.password = password;
+	}
+	
+	
+}
+
+public class ConstructorOverLoadingDemo {
+	
+	public static void main(String[] args) {
+		
+		Login l= new Login("kiran","abc");
+		Login l2= new Login(9010101010l,"bhscb");
+		
+	}
+
+}
+
+Constructor Inheritance:
+
+class A1{
+	
+	A1(){
+		System.out.println("A1()");
+	}
+	A1(int i){
+		System.out.println("A1(int)");
+	}
+	
+}
+class B1 extends A1{
+	
+	B1(){
+		//super();
+		System.out.println("B1()");
+	}
+}
+
+public class ConstructorInheritance {
+
+	public static void main(String[] args) {
+		B1 b= new B1();
+	}
+	
+}
+
+
+Polymprohism:
+
+Poly means many, morphism means forms. 
+
+Polymprohism is the process where an entity provides multiple functionalities 
+based on different inputs. 
+
+Polymprohism in java is the process where a method provides different functionalities based on different 
+inputs.
+
+We achieve Polymprohism using method overloading and method overiding. 
+
+Method Overloading:
+
+
+class Employee{
+	
+	 // username,password 
+	// otp
+	// email and otp
+	
+	void authenticate(String username, String password) {
+		if(username.contentEquals("sai") && password.contentEquals("kumar")) {
+			System.out.println("Authentication successful");
+		}
+		else {
+			System.out.println("Auth failure");
+		}
+	}
+	
+	void authenticate(int otp) {
+		 if(otp == 9011) {
+			 System.out.println("Authentication successful");
+		 }
+		 else {
+				System.out.println("Auth failure");
+			}
+	}
+	
+	void authenticate(String email, int otp) {
+		if(email.contentEquals("sai@gmail.com") && otp == 9012) {
+			System.out.println("authentication successful");
+		}
+		else {
+			System.out.println("Auth failure");
+		}
+	}
+	
+}
+
+public class MethodOverloadingDemo {
+	
+	public static void main(String[] args) {
+		Employee employee = new Employee();
+		employee.authenticate(9017);
+		employee.authenticate("sai@gmail.com", 9012);
+		employee.authenticate("sai","kumar");
+	}
+
+}
+
+
+
+
+
+
+
