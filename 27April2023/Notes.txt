@@ -1,0 +1,119 @@
+Method Overloading Realtime example:
+
+
+class GPay{
+	  String QRCode;
+}
+
+class CreditCard{
+	
+	String bankName;
+	long accNo;
+	int cvv;
+}
+
+class DebitCard{
+	String bankName;
+	long accNo;
+	int cvv;
+}
+
+class CashOnDelivery{
+	
+	String address;
+	long contactNumber;
+}
+
+class Payment{
+    void pay(CreditCard creditCard) {
+    	
+    	System.out.println("You chose credit card");
+    	System.out.println("Below are the details");
+    	System.out.println(creditCard.accNo);
+    	System.out.println(creditCard.bankName);
+    	System.out.println(creditCard.cvv);
+    	
+    }
+ void pay(DebitCard debitCard) {
+	 System.out.println("You chose debit card");
+ 	System.out.println("Below are the details");
+ 	System.out.println(debitCard.accNo);
+ 	System.out.println(debitCard.bankName);
+ 	System.out.println(debitCard.cvv);
+    }
+ 
+ void pay(GPay gpay) {
+	 System.out.println("You chose Gpay card");
+	 	System.out.println("Below are the details");
+	 	System.out.println(gpay.QRCode);
+ }
+	
+}
+
+
+
+public class MethodOverloadingRealtimeDemo {
+	
+	public static void main(String[] args) {
+		Payment payment = new Payment();
+		CreditCard cc = new CreditCard();
+		cc.accNo =78867890L;
+		cc.bankName= "HDFC";
+		cc.cvv=192;
+		GPay gpay = new GPay();
+		 gpay.QRCode="Scanned";
+		 payment.pay(gpay);
+		//payment.pay(cc);
+	}
+
+	
+}
+
+Method Overiding:
+
+
+
+
+
+class A2{
+	
+	void m1(){
+		System.out.println("m1() in A2");
+	}
+	
+	void m2() {
+		System.out.println("m2() in A2");
+	}
+	
+}
+
+class B2 extends A2{
+	
+	void m3(){
+		 System.out.println("m3() in B2");
+	}
+	
+	void m2() {
+		System.out.println("m2() in B2- Own Implementation");
+	}
+	
+}
+
+
+
+public class MethodOveridingDemo {
+	
+	public static void main(String[] args) {
+		
+//		B2 b= new B2();
+//		b.m1();
+//		b.m2();
+		
+		A2 aa = new A2();  
+		aa.m1();
+		aa.m2();
+		 A2 a2 = new B2(); // Dynamic Polymorphism 
+		 a2.m2();
+		
+	}
+}

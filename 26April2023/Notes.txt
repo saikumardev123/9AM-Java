@@ -123,16 +123,13 @@ class Employee{
 	}
 	
 }
-
-public class MethodOverloadingDemo {
-	
+public class MethodOverloadingDemo {	
 	public static void main(String[] args) {
 		Employee employee = new Employee();
 		employee.authenticate(9017);
 		employee.authenticate("sai@gmail.com", 9012);
 		employee.authenticate("sai","kumar");
 	}
-
 }
 
 
