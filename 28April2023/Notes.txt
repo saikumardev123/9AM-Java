@@ -1,0 +1,112 @@
+Abstraction:
+
+Abstraction is the process of providing only the necessary 
+details. 
+
+We can implement abstraction using interfaces and abstract 
+classes.
+
+interface:
+
+An interface is a set of rules defined technically. 
+
+An interface is a collection of abstract methods. 
+
+abstract method: any method that does not have an implementation will 
+be considered as abstract method and we use abstract keyword to make 
+a method as abstract.
+
+syntax: 
+
+interface Interface_name{
+
+   // abstract methods
+
+}
+
+
+interface ACRemotePanel{
+	 void powerOnOff();
+	 void timer(int minutes);
+	 void increaseTemp();
+	 void decreaseTemp();
+	 void sleepMode();
+}
+
+class MotherBoard1 implements ACRemotePanel{
+
+	  static boolean powerOnOffStatus = false;
+	 
+	  static int currentTemperature = 24;
+	  
+	  
+	 
+	public void powerOnOff() {
+		// TODO Auto-generated method stub
+		   if(powerOnOffStatus == false) {
+			    powerOnOffStatus = true;
+			    System.out.println("ac turned on");
+		   }
+		   else {
+			   powerOnOffStatus = false;
+			   System.out.println("ac turned off");
+		   }
+	}
+
+
+	public void timer(int minutes) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public void increaseTemp() {
+		// TODO Auto-generated method stub
+		
+		 if(currentTemperature < 32 && currentTemperature > 16) {
+			 currentTemperature++;
+			 System.out.println(currentTemperature);
+		 }
+		
+		
+		
+	}
+
+	public void decreaseTemp() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void sleepMode() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
+
+public class InterfacesDemo {
+	
+	public static void main(String[] args) {
+		
+		ACRemotePanel panel = new MotherBoard1();
+		panel.powerOnOff();
+		panel.powerOnOff();
+		panel.powerOnOff();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+		panel.increaseTemp();
+	}
+}
