@@ -1,0 +1,163 @@
+KeyPoints of Abstraction:
+
+1. If an interface is implemented by the class, then the class must provide immplementation for 
+all the methods. 
+
+2. An interface cannot be instantiated which means, we cannot create an object to an Interface.
+
+3. A class can implement more than one interfaces.
+
+4. An interface can extend more than one interfaces.
+
+5. If a class does not provide implementation for all the methods, then the unimplemented methods should be 
+put as abstract methods in the class. 
+
+interface A{
+	void m1();
+	void m2();
+	void m3();
+	void m4();
+}
+abstract class AImpl implements A{
+	public void m1() {
+		System.out.println("m1()");
+	}
+	public void m2() {
+		System.out.println("m2()");
+	}
+}
+class AImplHelper extends AImpl{
+	public void m3() {
+		// TODO Auto-generated method stub
+		System.out.println("m3()");
+		
+	}
+	public void m4() {
+		// TODO Auto-generated method stub
+		System.out.println("m4()");
+		
+	}
+}
+public class AbstractClassDemo {
+	public static void main(String[] args) {
+		A aa =  new AImplHelper();
+		aa.m1();
+		aa.m2();
+		aa.m3();
+		aa.m4();
+	}
+}
+
+Encapsulation: It is the process where the data and its code is bound together into a single unit 
+to provide the following functionalities such as 
+1. modularity 
+2. resuability 
+3. security 
+
+Best example for Encapsulation is class. 
+
+without Encapsulation we cannot use/implement inheritance, abstraction and polymorphism.
+
+Aggregation(HAS-A):
+class A{
+
+}
+class B{
+
+}
+class C{
+
+}
+class D{
+
+}
+class E{ // E has A,B,C,D
+     A aa = new A();
+     B bb = new B();
+     C cc = new C();
+     D dd = new D();
+}
+
+
+
+
+class Engine{
+	
+	
+	public String toString() {
+		// TODO Auto-generated method stub
+		System.out.println("Engine");
+		return "";
+	}
+	
+}
+
+class Tyres{
+	
+
+	public String toString() {
+		// TODO Auto-generated method stub
+		System.out.println("Tyres");
+		return "";
+	}
+}
+
+class Steering{
+
+	public String toString() {
+		// TODO Auto-generated method stub
+		System.out.println("Steering");
+		return "";
+	}
+}
+
+class Vehicle{
+	 Engine engine= new Engine();
+	 Tyres tyres = new Tyres();
+	 Steering steering = new Steering();
+}
+
+public class AggregationDemo {
+
+	public static void main(String[] args) {
+		Vehicle vehicle = new Vehicle();
+		System.out.println(vehicle.engine);
+		System.out.println(vehicle.tyres);
+		System.out.println(vehicle.steering);
+		
+	}
+	
+}
+
+Packages: 
+
+A Package is a collection of items. In case of Java, A package is a collection of interfaces and classes. 
+
+It is always recommended to create a package and then have classes and interfaces in it. 
+
+Problem Statement:  Create an application for a bank. 
+
+packages:   User Module
+
+com.bank.icici.user
+  
+                   Login 
+                   Register 
+                   UserManagement
+                   
+
+                   AccountApplication
+                   ChequeBookRequest
+
+
+com.bank.icici.manager 
+
+                      classes and interfaces 
+
+
+com.bank.icici.account 
+
+
+
+                  
+
