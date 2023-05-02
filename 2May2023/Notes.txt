@@ -1,0 +1,128 @@
+Arrays:
+
+An array is a linear data structure which stores the data in a 
+sequential order. 
+
+In Java, An array will store only similar type of data. 
+
+
+syntax: 
+
+  Datatype variablename[] = {, , , , , , , , ,};
+
+
+  class Customer{
+	 String name;
+	 String email;
+	 String address;
+	public Customer(String name, String email, String address) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.address = address;
+	}
+}
+public class ArraysDemo {
+	
+	public static void main(String[] args) {
+		
+		String users[]= { "kiran","rajesh","nikhil","anil","ravi"}; // static array
+		System.out.println(users[0]);
+		System.out.println(users.length);
+		// Iteration 
+		 for( int index = 0; index < users.length; index++) {
+			 System.out.println(users[index]);
+		 }
+		Customer c1= new Customer("ram", "ram@gmail.com", "ram nagar");
+		Customer c2= new Customer("kiran", "kiran@gmail.com", "bhel");
+		Customer c3= new Customer("nikhil", "nikhil@gmail.com", "hitec city");
+		 Customer customers[]= {c1,c2,c3};
+		 
+		 for(int index =0; index < customers.length; index++) {
+			 System.out.println(customers[index].name + "\t"+customers[index].email+"\t"+ customers[index].address);
+		 }
+		
+		
+	}
+
+}
+
+Drawbacks:
+
+1. Arrays are static and have fixed length.
+2. No predefined methods to work on Arrays.
+3. We need to write custom logic to perform any operation. 
+4. Arrays can store only similar type of data. 
+
+Overcome the Drawbacks:
+
+using ArrayList and Vector classes of Collection Framework.
+
+Strings:
+
+A collection of characters is considered as a String. 
+
+syntax: 
+
+String str = new String("<content> ");
+
+or 
+
+String str= "<content>";
+
+In Java, Strings are immutable (cannot be modified), however we can reassign a new value to the String variable.
+
+String firstName = new String("Hello"); 
+		
+		String lastName = new String("World");
+		
+		System.out.println(firstName);
+		System.out.println(lastName);
+		firstName.concat(lastName);
+		System.out.println(firstName); // Hello 
+		
+		firstName = firstName.concat(lastName);
+		
+		System.out.println(firstName);
+
+
+Predefined Methods of Strings:
+
+
+Problem Statement: 
+
+Implement a simple login system using Strings.  Method:ContentEquals.
+
+
+public class Login {
+	
+	public static void main(String[] args) {
+		
+		String username= new String("kiran"); String password=new String("kiran");
+		
+		if(username.contentEquals("kiran1") && password.contentEquals("kiran")) {
+			System.out.println("success");
+		}
+		else {
+			System.out.println("failure");
+		}
+		
+	}
+
+}
+
+
+public class StringMethods {
+	
+	public static void main(String[] args) {
+		String str= new String("            hello          "); 
+		System.out.println(str.concat("world"));
+		System.out.println(str.indexOf('h'));
+		System.out.println(str.charAt(1));
+		System.out.println(str.contains("ll"));
+		System.out.println(str.toUpperCase());
+		System.out.println(str.trim());
+		System.out.println(str.isEmpty());
+	}
+
+}
