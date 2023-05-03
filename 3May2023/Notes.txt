@@ -1,0 +1,140 @@
+Advanced Strings:
+
+String str= new String("hello"); 
+
+It will be stored in heap area.
+
+String str= "hello"; 
+
+it will be stored in string constant pool.
+
+String constant pool is a sub memory of Heap area where the 
+strings created without new keyword are stored.
+
+
+
+public class AdvancedStrings {
+	
+	public static void main(String[] args) {
+		
+		String str1= new String("hello");
+		String str2= new String("hello");
+		String str3 = str1;
+		System.out.println(str1 == str2); // false
+		System.out.println(str3 == str1); // true
+		
+	}
+
+}
+
+
+
+/*
+
+ Heap Memory:  
+ 
+    str1 -> 100x ->  "hello" 
+    str2 -> 200x ->  "hello"
+    str3 -> 100x
+    
+    str1 ==  str2  =>  100x   ==  200x   -> false
+    
+
+*/
+
+String Constant Pool:
+
+public class StringConstantPoolDemo {
+	
+	public static void main(String[] args) {
+		
+	String str1= "hello";
+	String str2= "hello";
+	String str3= "hello";
+	String str4= new String("hello");
+	String str5= new String("hello");
+	System.out.println(str1 == str2);
+	System.out.println(str1 == str3);
+	System.out.println(str1 == str4);
+	System.out.println(str4 == str5);
+	}
+}
+
+/*
+String Constant Pool:
+
+   str1  - 100x ---> "hello"
+   
+   str2 -  100x
+   
+   str3 -  100x
+   
+ Heap Memory:
+ 
+  str4 - 200x -> "hello"
+  str5 - 210x  ->  "hello"
+   
+*/
+
+
+code:
+
+
+public class StringConstantPoolExample {
+
+	public static void main(String[] args) {
+		String str1="hello";
+		String str2="hello";
+		String str3= "hello";	
+		System.out.println(str1 == str2);
+		str1= str1.concat("world");
+		System.out.println(str1);
+		System.out.println(str1 == str2);
+		System.out.println(str2 == str3);
+		str2 = str2.concat("user");
+		System.out.println(str2 == str3);
+		String str4 ="hello";
+		System.out.println(str4 == str3);
+	}	
+}
+
+/*
+ 
+    SCP:
+    
+     str1  ->  100x -> "hello" 
+     str2  -> 100x 
+     str3  -> 100x
+     
+     ---------------------------
+     str1 -> 100x -> "helloworld"
+     
+     str2 -> 300x -> "hello"
+     
+     str3 -> 300x
+     
+     ---------------------------
+ 
+     str1 -> 100x -> "helloworld"
+     
+     str2 -> 300x -> "hellouser"
+     
+     str3 -> 400x  -> "hello"
+ 
+ * */
+
+
+
+
+ Preference: 
+
+ SCP  vs Heap 
+
+  If the string is getting modified very frequently, then we 
+  should use new keyword to create the strings (Heap Memory).
+
+
+  if the string is not modified , then we should use string 
+  constant pool.
+
+  
