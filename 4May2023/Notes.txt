@@ -1,0 +1,145 @@
+Exception Handling:
+
+Whenever an error occurs in the runtime, the application gets crashed which means the application goes 
+into unavailability state. 
+
+The errors that occurs at runtime are known as Exceptions.
+
+Exception Handling is the process of skipping the code that raised an exception and continue the flow 
+of execution without any termination of the app.
+
+  Main Class: Throwable
+
+We handle the exceptions by using try catch mechanism.
+
+
+
+public class ExecepDemo {
+	
+	public static void main(String[] args) {
+		int a=10, b=3;
+		System.out.println(a+b); // 10
+		
+		try {
+			System.out.println(a/b); // Infinity
+		}
+		catch(Throwable throwable) {
+			System.out.println(throwable);
+		}
+		System.out.println(a*a); // 100	
+	}
+}
+
+
+When an error occurs in try block, the control never comes back from catch block to try block again even though 
+we have some more lines of code to be executed in try block. 
+
+example:
+
+
+public class ExecepDemo {
+	
+	public static void main(String[] args) {
+		int a=10, b=0;
+		String arr[]= {"ram","kiran"};
+		System.out.println(a+b); // 10
+		
+		try {
+			System.out.println(a/b); // 
+			System.out.println(arr[4]);
+		}
+		catch(Throwable throwable) {
+			System.out.println(throwable);
+		}
+		System.out.println(a*a); // 100	
+	}
+}
+
+finally block:
+
+The finally block is followed by catch block or try block.
+
+If we have any mandatory statements that needs to be exeucted irrespective of whether an exception 
+occured or not, then we need to put those statements into finally block.
+
+
+public class ExecepDemo {
+	
+	public static void main(String[] args) {
+		int a=10, b=7;
+		String arr[]= {"ram","kiran"};
+		System.out.println(a+b); // 10
+		
+		try {
+			System.out.println("opening database");
+			System.out.println(a/b); // 
+			System.out.println(arr[4]);
+		}
+		catch(Throwable throwable) {
+			System.out.println(throwable);
+			throw new RuntimeException("Custom Exception");
+		}
+		finally {
+			System.out.println("close DB");
+		}
+		
+		System.out.println(a*a); // 100	
+	}
+}
+
+Hierachy of Exceptions:
+
+https://www.google.com/search?q=exception+hierarchy&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiaw4-_5dr-AhX7wjgGHftSBJ0Q_AUoAXoECAEQAw&biw=1440&bih=821&dpr=1#imgrc=pFpyC_j3wjPtlM
+
+Any exception that is checked by compiler is known as CheckedException. 
+
+example: FIleNotFoundException, IOException,ClassNotFoundException...
+
+Any exception that is not checked by the compiler is known as unchecked exception.
+
+
+CheckedException Example:
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class CheckedExceptionExample {
+	public static void main(String[] args) {
+		
+		String username= "rajesh";
+		String password = "kiran";
+		
+		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		
+		
+		try {
+			System.out.println("Enter username");
+			String uname = br.readLine();
+			System.out.println("Enter password");
+			String pass = br.readLine();
+			
+			if(username.contentEquals(uname) && password.contentEquals(pass)) {
+				System.out.println("Login success");
+			}
+			else {
+				System.out.println("login failure");
+			}
+			
+		}
+		catch(IOException IOE) {
+			System.out.println(IOE);
+			// Add this errror to the logger
+		}
+		
+		System.out.println("End of the operation");
+		
+		
+	}
+}
+
+
+
+
+
+
