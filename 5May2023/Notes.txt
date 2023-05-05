@@ -1,0 +1,144 @@
+Custom Exceptions:
+
+We can create our own exceptions (checked and unchecked).
+
+
+class PasswordValidationException extends Exception
+{
+	public PasswordValidationException(String str) {
+		// TODO Auto-generated constructor stub
+		super(str);
+	}	
+}
+public class CustomExceptionDemo {
+	
+	static void checkPassword(String password)  {
+		try {
+		 if(password.length() < 8) {
+			   throw new PasswordValidationException("Password cannot be less than 8 chars");
+		  }
+		}catch(PasswordValidationException p) {
+		
+			System.out.println(p);
+		} 
+		  
+	}
+	
+	public static void main(String[] args) {
+		  String password="sjcsc"; 
+		
+		      checkPassword(password);
+		
+		  System.out.println("Some other code");
+		
+	}
+	
+}
+
+Problem Statement:
+
+Create a unchecked exception and use it. 
+
+class UsernameValidationException extends Exception {
+public UsernameValidationException (String str){
+super(str);
+}
+}
+public class UsernameValidation {
+ static void checkUsername(String Username) {
+	 try {
+		 if(Username.length()< 8 || Username.length() > 16) {
+			 throw new UsernameValidationException ("Username Length doesn't match");
+		 }
+	 } catch (UsernameValidationException u) {
+		 System.out.println(u);
+		 
+	 }
+ }
+ public static void main(String[] args) {
+	 String Username = "ChandiniInaparty";
+	 checkUsername(Username);
+	 System.out.println("Hello, I am the next part of the code");
+	  }
+}
+
+
+StringBuffer & StringBuilder: 
+
+StringBuffer stores strings that are modifyable which means StringBuffer is mutable.
+
+public class StringBufferDemo {
+	  public static void main(String[] args) {
+		
+	   StringBuffer buffer = new StringBuffer("hello");
+	   
+	   System.out.println(buffer);
+	   
+	   buffer.append("world");
+	   
+	   System.out.println(buffer);
+	   
+	   // All the methods of StringBuffer are sync. 
+	   
+	   // StringBuilder
+	   
+ StringBuilder builder = new StringBuilder("hello");
+	   
+	   System.out.println(builder);
+	   
+	   builder.append("world");
+	   
+	   System.out.println(builder);
+	   
+	   
+	   
+		  
+	}
+}
+
+
+Problem Statement: 
+
+String str="hello how are you doing! happy weekend";
+
+find the  number of occurances of a character 'l' //
+
+public class StringBuffer {
+	
+	public static void main(String[] args) {
+		
+		String str = "hello how are you doing! happy weekend";
+		char find = 'l';
+		  
+		  int charCount=0;
+		  
+		  for(int i=0; i<str.length(); i++)
+		  {
+		      if(str.charAt(i) == find)
+		    	  
+		      charCount++;
+		  }
+		  
+		  System.out.println("occurance of l is:" + charCount);
+		  
+		  }
+
+	}
+
+
+Problem Statement:
+
+
+String str="hello how are you doing! happy weekend";
+
+find the  number of occurances of each character in the string.
+
+h - 3 
+
+e - 5 
+
+.
+.
+.
+.
+
