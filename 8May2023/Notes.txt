@@ -1,0 +1,98 @@
+Regex:
+
+Regular Expressions are used to create search patterns. 
+
+
+Problem Statement: 
+
+Covid vaccine - 2021 @india/@usa_america 
+
+remove the special characters
+
+First Example:
+
+import java.util.regex.Pattern;
+
+public class FirstApp {
+	public static void main(String[] args) {
+		boolean result = Pattern.compile("llo").matcher("hello").matches();
+		boolean result2 = Pattern.compile("llo").matcher("hello").find();
+		System.out.println("result"+ result);
+		System.out.println("result2"+result2);
+	}
+}
+
+Brackets:
+
+[abc]: a or b or c 
+
+boolean result = Pattern.compile("x[abc]y").matcher("xay").matches();
+		System.out.println("result : "+ result);
+	}
+
+[^abc]: 
+
+	boolean result = Pattern.compile("x[^abc]y").matcher("x*y").matches();
+		System.out.println("result : "+ result);
+
+[0-9]:
+boolean result = Pattern.compile("x[0-9]y").matcher("x1y").matches();
+		System.out.println("result : "+ result);
+
+[^0-9]: 
+
+boolean result = Pattern.compile("x[^0-9]y").matcher("x&y").matches();
+		System.out.println("result : "+ result);
+
+[a-z], [A-Z]..
+
+
+Regex Quantifiers:
+
+X?	X occurs once or not at all
+
+boolean result = Pattern.compile("x[a-z]?y").matcher("xy").matches(); // 0 or 1
+		System.out.println("result : "+ result);
+
+X+	X occurs once or more times
+
+boolean result = Pattern.compile("x[a-z]+y").matcher("xfhjkllkjhgcvy").matches(); // 1 or many
+		System.out.println("result : "+ result);
+
+X*	X occurs zero or more times
+
+boolean result = Pattern.compile("x[a-z]*y").matcher("xy").matches(); // 0 or many
+		System.out.println("result : "+ result);
+
+X{n}	X occurs n times only
+
+boolean result = Pattern.compile("x[a-z]{2}y").matcher("xamy").matches(); 
+		System.out.println("result : "+ result);
+
+X{n,}	X occurs n or more times
+
+boolean result = Pattern.compile("x[a-z]{2,}y").matcher("xamhjhjy").matches(); 
+		System.out.println("result : "+ result);
+
+X{y,z}	X occurs at least y times but less than z times
+
+boolean result = Pattern.compile("x[a-z]{2,5}y").matcher("xamhjhy").matches(); 
+		System.out.println("result : "+ result);
+
+
+Problem Statement: 
+
+Create a pattern for the following requirment. 
+
+Password -> atleast 1 uppercase, 1 lowercase, 1 special character, 1 digit and should be between 8 to 14 characters.
+
+import java.util.regex.Pattern;
+
+public class FirstExample {
+	public static void main(String[] args) {
+		String Password = "Chandini@130990";
+	boolean result = Pattern.compile("^(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[0-9]+)(?=.*[\\W]+).{8,14}$").matcher(Password).matches();
+	System.out.println("result is: " + result);
+	}
+}
+
