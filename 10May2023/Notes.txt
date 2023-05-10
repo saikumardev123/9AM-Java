@@ -1,0 +1,109 @@
+SortedSet:
+
+The implementation class of SortedSet interface is TreeSet. 
+
+TreeSet does not allow duplicate elements 
+TreeSet does not gurantee insertion order.
+The default Order of a TreeSet is ascending order.
+It allows only one type of elements.
+
+TreeSet treeSet =new TreeSet();
+		treeSet.add(10);
+		treeSet.add(20);
+		treeSet.add(5);
+		treeSet.add(4);
+		treeSet.add(50);
+		treeSet.add(5);
+		treeSet.add(4);
+		treeSet.add(50);
+		System.out.println(treeSet);
+
+
+custom order:
+
+import java.util.Comparator;
+import java.util.TreeSet;
+
+class CustomComparator implements Comparator{
+
+	@Override
+	public int compare(Object o1, Object o2) {
+		int i=0;
+		// TODO Auto-generated method stub
+		   Integer i1= (Integer)o1;
+		   Integer i2= (Integer)o2;
+		 if(i1 < i2) {
+			 i=1;
+		 }
+		 if(i1 > i2) {
+			 i=-1;
+		 }
+		 return i;
+	}
+}
+
+public class TreeSetDemo {
+
+	public static void main(String[] args) {
+		TreeSet treeSet =new TreeSet(new CustomComparator());
+		treeSet.add(10);
+		treeSet.add(20);
+		treeSet.add(5);
+		treeSet.add(4);
+		treeSet.add(50);
+		treeSet.add(5);
+		treeSet.add(4);
+		treeSet.add(50);
+		System.out.println(treeSet);
+		
+	}
+	
+}
+
+List:
+
+The implementation class for List Interface is ArrayList.
+
+ArrayList is a dynamic array which gets automatically expands and shrinks based 
+on the elements stored.
+
+key Points:
+
+1. Allows duplicate values 
+2. provides predefined methods to perform operations on the arraylist. 
+3. Allows different values to be stored. 
+4. Insertion order is guranteed.
+
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+	public static void main(String[] args) {
+	
+		ArrayList<Object> al = new ArrayList<Object>();
+		 al.add(10);
+		 al.add(20);
+		 al.add(30);
+		 al.add(40);
+		 al.add(10);
+		 al.add(20);
+		 al.add("hello");
+		 al.add("hey");
+		 al.add(true);
+		 al.add(false);
+		 al.add(true);
+		 al.add(false);
+		 
+		 System.out.println(al);
+		 
+		 //System.out.println(al.get(0));
+//		 System.out.println(al.get(11));
+//		 System.out.println(al.contains(true));
+		 al.add(1, 5);
+		 System.out.println(al);
+		
+		
+		
+		
+	}
+}
+

@@ -1,0 +1,168 @@
+Data Structures:
+
+A data structure is used to organize the application data in an efficient way.
+
+There are 2 types of data structures, 
+
+1. Linear : Data gets organized in a sequential order.
+
+Examples: Stack, Queue, Array...
+
+2. Non Linear: Data gets organized in a random order.
+
+Examples : Trees and graphs
+
+Java provides Collection Framework which acts an abstraction layer on top of 
+Data Structures.
+
+Collection Framework: 
+
+Collection:  A Collection Interface contains the required methods to be available 
+for any data structure.
+
+Every Data Structure in Collection Framework , directly or indirectly implements
+Collection Interface.
+
+
+Hierachy of Collection Framework:
+
+https://www.google.com/search?q=collection+framework+hierarchy&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiGhPXuquf-AhUFpekKHW3aBiIQ_AUoAXoECAIQAw&biw=1440&bih=821&dpr=1#imgrc=HavXiCoG8BARNM 
+
+Set: The implementation classes of Set Interface are HashSet and LinkedHashSet.
+
+HashSet:
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class HashSetDemo {
+
+	public static void main(String[] args) {
+		
+		HashSet<Object> hs = new HashSet<Object>();
+		
+		hs.add(100); // new Integer(100)
+		hs.add(200);
+		hs.add("hello");
+		hs.add("how");
+		hs.add(100);
+		hs.add(200);
+		hs.add(true);
+		hs.add(false);
+		
+		System.out.println(hs.size());
+		System.out.println(hs);
+		System.out.println(hs.contains(true));
+//		hs.clear();
+		System.out.println(hs.isEmpty());
+		System.out.println(hs.remove(true));
+		System.out.println(hs.remove(false));
+		System.out.println(hs);
+		 Iterator it = hs.iterator();
+		 while(it.hasNext()) {
+			  System.out.println(it.next());
+		 }
+		/*
+		 
+		       1. It does not allow duplicate values
+		       2. Does not guarantee the order
+		  
+		 */
+		
+		
+		
+	}
+	
+}
+
+
+LinkedHashSet:
+LinkedHashSet is a child of HashSet.
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetDemo {
+	public static void main(String[] args) {
+		LinkedHashSet<Object> hs = new LinkedHashSet<Object>();
+		hs.add(100); // new Integer(100)
+		hs.add(200);
+		hs.add("hello");
+		hs.add("how");
+		hs.add(100);
+		hs.add(200);
+		hs.add(true);
+		hs.add(false);
+		
+		System.out.println(hs);
+		/*
+		 
+		       1. It does not allow duplicate values
+		       2.  guarantees the insertion order
+		  
+		 */
+		
+		
+		
+	}
+	
+}
+
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+
+public class HashSetDemo {
+
+	public static void main(String[] args) {
+		
+		LinkedHashSet<Object> hs = new LinkedHashSet<Object>();
+		
+		hs.add(100); // new Integer(100)
+		hs.add(200);
+		hs.add("hello");
+		hs.add("how");
+		hs.add(true);
+		hs.add(false);
+		//System.out.println(hs);
+		Iterator it = hs.iterator();
+		  int i=0;
+		 while(it.hasNext()) {
+			 if(i < 2) {
+			 System.out.println(it.next());
+			 }
+			 else {
+				 break;
+			 }
+			 i++;
+		 }
+		
+		/*
+		 
+		       1. It does not allow duplicate values
+		       2.  guarantees the insertion order
+		  
+		 */
+		
+		
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

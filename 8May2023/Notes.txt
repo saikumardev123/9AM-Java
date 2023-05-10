@@ -95,4 +95,3 @@ public class FirstExample {
 	System.out.println("result is: " + result);
 	}
 }
-
