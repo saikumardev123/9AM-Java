@@ -1,0 +1,162 @@
+ArrayList vs Vector:
+
+https://www.google.com/search?q=differences+between+vector+and+arraylist&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjb3JKn7u7-AhUkbmwGHWNjDo0Q_AUoAXoECAIQAw&biw=1440&bih=821&dpr=1#imgrc=pVO5Lx3tlduVSM
+
+Map:
+
+If we want to store data in key value pair format then we can use Map 
+interface.
+
+Map interface has the following implementation classes.
+
+HashMap, LinkedHashMap and TreeMap.
+
+
+HashMap:
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class HashMapDemo {
+	public static void main(String[] args) {
+		
+		HashMap<Integer,Object> hm= new HashMap<Integer,Object>();
+		hm.put(109, "hello");
+		hm.put(100, true);
+		hm.put(101, 900);
+		hm.put(102, 800);
+		hm.put(102, 700);
+		hm.put(102, 500);
+		hm.put(102, 200);
+		System.out.println(hm);
+		System.out.println(hm.get(102));
+		Set<Entry<Integer,Object>> entries= hm.entrySet();
+		Iterator<Entry<Integer,Object>> it = entries.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+		
+	}
+
+}
+
+
+/*
+ Insertion order is not guranteed 
+ duplicate entries overide the previous values.
+ 
+*/
+
+
+LinkedHashMap:
+
+
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class LInkedHashMapDemo {
+	public static void main(String[] args) {
+		
+		LinkedHashMap<Integer,Object> hm= new LinkedHashMap<Integer,Object>();
+		hm.put(109, "hello");
+		hm.put(100, true);
+		hm.put(101, 900);
+		System.out.println(hm);
+		System.out.println(hm.get(102));
+		Set<Entry<Integer,Object>> entries= hm.entrySet();
+		Iterator<Entry<Integer,Object>> it = entries.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+		
+	}
+
+}
+/*
+ Insertion order is  guranteed 
+ duplicate entries overide the previous values.
+*/
+
+
+TreeMap:
+
+
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class TreeMapDemo {
+	public static void main(String[] args) {
+		TreeMap<Object,Object> hm= new TreeMap<Object,Object>();
+		hm.put(109, "hello");
+		hm.put(100, true);
+		hm.put(101, 900);
+		hm.put(9899, 900);
+		hm.put(0, 900);
+		System.out.println(hm);
+		System.out.println(hm.get(102));
+		Set<Entry<Object,Object>> entries= hm.entrySet();
+		Iterator<Entry<Object,Object>> it = entries.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+	}
+}
+
+
+
+Problem Statement: 
+
+
+Create a hashmap that stores products and get the products based on the IDs.
+
+Note: store 3 products.
+
+import java.util.HashMap;
+
+class Prod{
+	private int id;
+	private String name;
+	private String seller;
+	private long price;
+	public Prod(int id, String name, String seller, long price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.seller = seller;
+		this.price = price;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.id+"\t"+ this.name+"\t"+ this.seller+"\t"+ this.price;
+	}
+	
+}
+
+public class ProductManagementDemo {
+
+	public static void main(String[] args) {
+		
+		   HashMap hm= new HashMap();
+		   hm.put(101, new Prod(101, "product 1", "seller 1", 200));
+		   hm.put(102, new Prod(102, "product 2", "seller 2", 800));
+		   hm.put(103, new Prod(103, "product 3", "seller 3", 400));
+		   hm.put(104, new Prod(104, "product 4", "seller 4", 1200));
+		   
+		   System.out.println(hm);
+		   
+		   System.out.println(hm.get(103));
+		
+		
+	}
+	
+}
+
+
