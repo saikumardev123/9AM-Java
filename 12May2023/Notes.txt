@@ -139,9 +139,7 @@ class Prod{
 	}
 	
 }
-
 public class ProductManagementDemo {
-
 	public static void main(String[] args) {
 		
 		   HashMap hm= new HashMap();
@@ -153,10 +151,7 @@ public class ProductManagementDemo {
 		   System.out.println(hm);
 		   
 		   System.out.println(hm.get(103));
-		
-		
 	}
-	
 }
 
 

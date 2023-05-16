@@ -1,0 +1,9 @@
+Annotations:
+
+Annotation is a representation of meta data.
+
+metadata is all about the data about data.
+
+Annotations are used to specify / provide some additional information 
+to the java compiler / JVM. 
+
