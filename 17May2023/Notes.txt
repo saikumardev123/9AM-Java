@@ -1,0 +1,97 @@
+JVM:
+
+Java Virtual Machine which is used to allocate memory for the code and also exeuctes the code.
+
+
+When we invoke java command, then JVM gets initiated.
+
+syntx:  java Hello 
+
+when the above command is executed, then JVM gets invoked and the process of execution takes place.
+
+
+Stack:
+
+
+public class JVMDemo {
+	 static void m1() {
+		 System.out.println("m1 called");
+		 m2();
+		 System.out.println("after m2 execution");
+	 }
+	 static void m2() {
+		 System.out.println("m2 called");
+	 }
+	public static void main(String[] args) {
+		
+		m1();
+		System.out.println("after m1 exeuction");
+		
+	}
+}
+
+
+https://www.google.com/search?q=jvm+architecture&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj6mem7t_v-AhXkRmwGHfIDCi4Q_AUoAXoECAEQAw&biw=1440&bih=821&dpr=1#imgrc=Y5GTBG8fUQXPjM
+
+
+Multi Threading:
+
+
+Multi Threading is used to perform multi-tasking.
+
+
+There are 2 ways to create a thread. 
+
+1. using Runnable Interface 
+2. using Thread class 
+
+
+
+
+class MyThread implements Runnable{
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println(Thread.currentThread().getName());
+		
+	}
+}
+
+
+public class BasicThreadDemo {
+	
+	public static void main(String[] args) {
+
+		Thread obj= Thread.currentThread();
+		
+		System.out.println(obj.getName());
+		
+		System.out.println(obj.getPriority());
+		
+		System.out.println(obj.getState());
+		
+		System.out.println(obj.getThreadGroup());
+		
+		System.out.println("--------------------------------");
+		
+		MyThread mt1 = new MyThread();
+		MyThread mt2 = new MyThread();
+		
+		Thread t1= new Thread(mt1);
+		Thread t2= new Thread(mt2);
+		
+		t1.setName("MyOWNThread");
+		t2.setName("MyOWNThread second");
+		
+		t1.start();
+		t2.start();
+		
+	}
+
+}
+
+
+Problem Statement:
+
+Create a thread using runnable interface and display numbers from 1 to 10 (write logic in run method).
+

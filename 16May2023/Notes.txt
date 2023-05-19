@@ -7,3 +7,40 @@ metadata is all about the data about data.
 Annotations are used to specify / provide some additional information 
 to the java compiler / JVM. 
 
+
+import java.util.ArrayList;
+
+class A{
+
+	public void m1(){
+		System.out.println("m1() of A");
+	}
+	
+	@Deprecated
+	public void m2() {
+		 
+	}
+	
+}
+
+class B extends A{
+	
+	@Override
+	public void m1() {
+		System.out.println("m1() of B");
+	}
+	
+}
+
+
+public class AnnotationsDemo {
+	public static void main(String[] args) {
+		B b= new B();
+		b.m2();
+		@SuppressWarnings("rawtypes")
+		ArrayList al= new ArrayList();
+		al.add("hello");
+		
+	}
+	
+}
